@@ -29,4 +29,15 @@ class Kele
     response = self.class.get('/users/me', headers)
     parsed_response = JSON.parse(response.body)
   end
+
+  def get_mentor_availability(mentor_id)
+    headers = {
+        headers: {
+            'authorization' => @auth_token,
+            'content_type' => 'application/json'
+        }
+    }
+    response = self.class.get("/mentors/#{mentor_id}/student_availability", headers)
+    parsed_response = JSON.parse(response.body)
+  end
 end
