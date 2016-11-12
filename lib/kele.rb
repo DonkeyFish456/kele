@@ -1,6 +1,8 @@
 require 'httparty'
+require 'roadmap'
 class Kele
   include HTTParty
+  include Roadmap
   require 'json'
   base_uri 'https://www.bloc.io/api/v1'
   def initialize(email, password)
